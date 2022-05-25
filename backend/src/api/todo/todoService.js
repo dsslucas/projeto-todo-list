@@ -7,7 +7,7 @@ const Todo = require('./todo')
 Todo.methods(['get', 'post', 'put', 'delete'])
 
 //Validações
-//Para atualizações de nome, retorna atualizado
+//Para atualizações de nome, retorna atualizado. Também não permite atualizar dados com required
 //Node Restful não valida atualizações. Para tal, é necessário o runValidators
 Todo.updateOptions({new: true, runValidators: true})
 
