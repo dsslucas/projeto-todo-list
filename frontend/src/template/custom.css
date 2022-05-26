@@ -11,6 +11,23 @@
     width: 15rem;
 }
 
+
 .todoForm{
-    padding-bottom: 7rem;
+    padding: 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+}
+
+@media screen and (max-width: 600px) {
+    .todoForm{
+        flex-direction: column;
+    }
+    .btn{
+        margin-top: 0.8rem;
+    }
+    input{
+        text-align: center;
+    }
 }

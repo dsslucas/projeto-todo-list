@@ -7,7 +7,7 @@ export default class Grid extends Component {
     //Converte até quatro números em padrões de colunas do Bootstrap
     toCssClasses(numbers){
         //Colunas
-        const cols = numbers ? numbers.split('') : []
+        const cols = numbers ? numbers.split(' ') : []
 
         let classes = ''
 
@@ -22,8 +22,9 @@ export default class Grid extends Component {
     render() {
         //Parâmetro que recebemos
         const gridClasses = this.toCssClasses(this.props.cols || 12)
+
         return (
-            <div className={gridClasses}>
+            <div className={`${gridClasses}`}>
                 {this.props.children}
             </div>
         )
