@@ -1,20 +1,21 @@
 import React from "react";
 
 export default props => {
-    return (
-        <nav className='navbar navbar-inverse bg-inverse'>
-            <div className='navbar-header'>
-                <a href="/" className='navbar-brand'>
-                    <i className='fa fa-calendar-check-o'></i> To-do App
-                </a>
-            </div>
 
-            <div id='navbar' className='navbar-collapse collapse'>
-                <ul className="nav navbar-nav">
-                    <li><a href='#/todos'>Tarefas</a></li>
-                    <li><a href='#/about'>Sobre</a></li>
-                </ul>
-            </div>
+    return (
+        <nav className="navbar navbar-expand-lg navbar-dark">
+            <a className="navbar-brand" href="#">
+                <i className='fa fa-calendar-check-o'></i> To-Do List
+            </a>
+
+            <ul className="navbar-nav">
+                <li className="nav-item p-2">
+                    <a className="nav-link" href="#/todos">Tarefas</a>
+                </li>
+                <li className="nav-item p-2">
+                    <a className="nav-link" href="#/about">Sobre</a>
+                </li>
+            </ul>
         </nav>
     )
 }

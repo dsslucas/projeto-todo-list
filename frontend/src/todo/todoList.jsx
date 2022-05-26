@@ -9,7 +9,7 @@ export default props => {
         return list.map(toDo => (
             <tr key={toDo._id}>
                 <td className={toDo.done ? 'markedAsDone' : ''}>{toDo.description}</td>
-                <td>
+                <td className="tableActions">
                     <IconButton
                         style="success"
                         icon="check"

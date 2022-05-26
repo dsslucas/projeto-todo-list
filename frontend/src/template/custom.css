@@ -1,5 +1,14 @@
+#app, html{
+    background-color: #434243;
+}
+
+*{
+    color: #D3D3D3;
+}
+
 .btn{
-    margin-right: 1rem;
+    margin-left: 0.5rem;
+    margin-right: 0.5rem;
 }
 
 .markedAsDone{
@@ -9,11 +18,13 @@
 
 .tableActions{
     width: 15rem;
+    text-align: center;
 }
 
-
 .todoForm{
-    padding: 2rem;
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+    margin: 0;
     display: flex;
     align-items: center;
     justify-content: center;
@@ -26,8 +37,13 @@
     }
     .btn{
         margin-top: 0.8rem;
+        margin-left: 0.1rem;
+        margin-right: 0.1rem;
     }
     input{
         text-align: center;
+    }
+    .navbar-nav{
+        flex-direction: row;
     }
 }

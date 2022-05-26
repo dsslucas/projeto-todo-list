@@ -4,7 +4,7 @@ import PageHeader from "../template/pageHeader";
 export default props => {
     return (
         <div>
-            <PageHeader name="Sobre" small="Nós" />
+            <PageHeader name="Sobre" />
             <h2>Nossa história</h2>
             <p>Lorem ipsum dolor sit amet, consectetur adipisicing elit. Debitis officiis non illo explicabo dolore fugiat sed at eveniet voluptates! Neque consequatur voluptates expedita officia fugiat laboriosam commodi dolor dicta culpa.</p>
 

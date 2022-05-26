@@ -15,10 +15,9 @@ export default props => {
         }
     }
 
-
     return (
         <div role='form' className='todoForm'>
-            <Grid cols='12 12 9 10'>
+            <Grid cols='12 12 8 9'>
                 <input
                     id="description"
                     className="form-control"
@@ -28,10 +27,10 @@ export default props => {
                     onKeyUp={keyHandler}
                 />
             </Grid>
-            <Grid cols='12 4 3 2'>
+            <Grid cols='12 4 4 3'>
                 <IconButton style="primary" icon="plus" onClick={props.handleAdd} />
                 <IconButton style="info" icon="search" onClick={props.handleSearch} />
-                <IconButton style="default" icon="close" onClick={props.handleClear} />
+                <IconButton style="danger" icon="close" onClick={props.handleClear} />
             </Grid>
 
         </div>
