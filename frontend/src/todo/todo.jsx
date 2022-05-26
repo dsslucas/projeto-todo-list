@@ -81,7 +81,7 @@ export default class Todo extends Component {
         this.refresh(this.state.description)
     }
 
-    //Limpa a lista
+    //Limpa o campo de pesquisa
     handleClear(){
         this.refresh()
     }
