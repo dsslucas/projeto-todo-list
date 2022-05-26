@@ -51,7 +51,7 @@ module.exports = {
         }, {
             //Loaders para o CSS
             test: /\.css$/,
-            loader: ExtractTextPlugin.extract('style-loader', 'css-loader')
+            loader: ExtractTextPlugin.extract('style-loader', 'css-loader'),
         }, {
             //Loader para fontes como o Font Awesome e Font Extractor
             test: /\.woff|.woff2|.ttf|.eot|.svg*.*$/,
