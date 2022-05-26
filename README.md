@@ -18,6 +18,7 @@ Elaboração de uma lista simples To-Do para fins de aprendizagem sobre API, seu
 - CSS3
 - Font Awesome
 - Bootstrap
+- Webpack
 
 ## Instalação
 
