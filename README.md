@@ -5,6 +5,11 @@ Elaboração de uma lista simples To-Do para fins de aprendizagem sobre API, seu
 
 ## O que foi usado?
 ### Backend
+- Express
+- PM2
+- MongoDB
+- Node Restful
+- Body Parser
 
 ### Frontend
 - React.js
@@ -20,6 +25,7 @@ Para todos os casos abaixo, é importante utilizar o comando `git clone [link]` 
 
 ### Backend
 - Acesse a pasta no terminal e digite `npm i` para instalar as dependências no `package.json`
+- É importante iniciar o Mongo, que deve estar instalado. Acesse o terminal e digite `mongod`.
 
 ### Frontend
 - Acesse a pasta no terminal e digite `npm i` para instalar as dependências no `package.json`
