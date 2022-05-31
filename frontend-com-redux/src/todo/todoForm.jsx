@@ -2,9 +2,12 @@ import React from "react";
 import Grid from "../template/grid";
 import IconButton from "../template/iconButton";
 
+//Redux
+import { connect } from 'react-redux'
+
 //Estrutura do componente de formulário.
 
-export default props => {
+const TodoForm = props => {
 
     //Se usuário pressionar Enter ou Esc
     const keyHandler = (e) => {
@@ -36,3 +39,9 @@ export default props => {
         </div>
     )
 }
+
+//Retorna um objeto que vai "ensinar" o React-Redux como vai mapear o estado
+//todo está vindo dos reducers
+const mapStateToProps = state => ({description: state.todo.description})
+
+export default connect(mapStateToProps)(TodoForm)
