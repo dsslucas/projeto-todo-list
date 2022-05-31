@@ -4,6 +4,10 @@ import IconButton from "../template/iconButton";
 
 //Redux
 import { connect } from 'react-redux'
+import { bindActionCreators } from "redux";
+
+//Actions (também do Redux)
+import { changeDescription } from "./todoActions";
 
 //Estrutura do componente de formulário.
 
@@ -26,7 +30,7 @@ const TodoForm = props => {
                     className="form-control"
                     placeholder="Adicione uma tarefa"
                     value={props.description}
-                    onChange={props.handleChange}
+                    onChange={props.changeDescription}
                     onKeyUp={keyHandler}
                 />
             </Grid>
@@ -44,4 +48,10 @@ const TodoForm = props => {
 //todo está vindo dos reducers
 const mapStateToProps = state => ({description: state.todo.description})
 
-export default connect(mapStateToProps)(TodoForm)
+//Faz o Binding do formuláiro
+//Dispatch dispara a ação e passa elas para todos os reducers
+//BindActionCreators realiza a ligação do disparador de ações do reducers com as actions, de forma automática
+const mapDispatchToProps = dispatch => bindActionCreators({changeDescription}, dispatch)
+
+
+export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)

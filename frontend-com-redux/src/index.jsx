@@ -7,8 +7,11 @@ import { createStore } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './main/reducers'
 
+//Integração com a extensão do Chrome
+const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
+
 //Estado da aplicação, que será controlado pelo Redux
-const store = createStore(reducers)
+const store = createStore(reducers, devTools)
 
 ReactDOM.render(
     <Provider store={store}>
