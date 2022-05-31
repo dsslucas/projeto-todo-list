@@ -7,7 +7,7 @@ import { connect } from 'react-redux'
 import { bindActionCreators } from "redux";
 
 //Actions (também do Redux)
-import { changeDescription, search, add } from "./todoActions";
+import { changeDescription, search, add, clear } from "./todoActions";
 
 //Estrutura do componente de formulário.
 
@@ -28,18 +28,18 @@ class TodoForm extends Component {
     //Realiza o envio por enter ou botão
     keyHandler(e) {
         //Description é dado vindo da Store! O restante é  função
-        const { add, search, description } = this.props
+        const { add, search, description, clear } = this.props
 
         if (e.key === 'Enter') {
             e.shiftKey ? search() : add(description)
         } else if (e.key === 'Escape') {
-            this.props.handleClear()
+            this.props.clear()
         }
     }
 
     render() {
         //Description é dado vindo da Store!
-        const { add, search, description } = this.props
+        const { add, search, description} = this.props
 
         return (
             <div role='form' className='todoForm'>
@@ -56,7 +56,7 @@ class TodoForm extends Component {
                 <Grid cols='12 4 4 3'>
                     <IconButton style="primary" icon="plus" onClick={() => add(description)} />
                     <IconButton style="info" icon="search" onClick={() => search()} />
-                    <IconButton style="danger" icon="close" onClick={this.props.handleClear} />
+                    <IconButton style="danger" icon="close" onClick={this.props.clear} />
                 </Grid>
             </div>
         )
@@ -70,7 +70,7 @@ const mapStateToProps = state => ({ description: state.todo.description })
 //Faz o Binding do formuláiro
 //Dispatch dispara a ação e passa elas para todos os reducers
 //BindActionCreators realiza a ligação do disparador de ações do reducers com as actions, de forma automática
-const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription, search, add }, dispatch)
+const mapDispatchToProps = dispatch => bindActionCreators({ changeDescription, search, add, clear }, dispatch)
 
 
 export default connect(mapStateToProps, mapDispatchToProps)(TodoForm)
