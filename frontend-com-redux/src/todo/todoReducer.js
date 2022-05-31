@@ -1,17 +1,8 @@
 //Responsável por evoluir o estado
 
+//ESTADO INICIAL
 const INITIAL_STATE = {
-    //Reducer por enquanto fixo
-    description: "Ler Livro",
-    list: [{
-        _id: 1,
-        description: "Pagar fatura do cartão",
-        done: true
-    }, {
-        _id: 2,
-        description: "Reunião com a equipe às 10:00",
-        done: false
-    }]
+    description: "", list: []
 }
 
 //Função que representa o reducer. Recebe o estado atual e uma action; sempre que uma action for chamada, os reducers são chamados e perguntam se querem alterar o estado ou não
