@@ -6,7 +6,16 @@ import App from './main/App';
 import { createStore, applyMiddleware } from 'redux'
 import { Provider } from 'react-redux'
 import reducers from './main/reducers'
+
+//Middlewares
+//Para carregamento após o post. Dentro da Action Creator, retornar um array com várias Actions. No entanto, ele dispara as actions mesmo não tendo request pronto
+import multi from 'redux-multi'
+
+//Promise, para as listas assíncronas. Sempre que retorna uma Promise na Action, espera ser resolvida para depois chegar aos reducers
 import promise from 'redux-promise'
+
+//Thunk
+import thunk from 'redux-thunk'
 
 //Integração com a extensão do Chrome
 const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_EXTENSION__()
@@ -17,7 +26,7 @@ const devTools = window.__REDUX_DEVTOOLS_EXTENSION__ && window.__REDUX_DEVTOOLS_
     2. Chama o resultado que vai vir pelo createStore
     3. Após, chama os reducers e o devTools
 */
-const store = applyMiddleware(promise)(createStore)(reducers, devTools)
+const store = applyMiddleware(thunk, multi, promise)(createStore)(reducers, devTools)
 
 ReactDOM.render(
     <Provider store={store}>

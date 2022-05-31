@@ -10,7 +10,7 @@ export const changeDescription = (event) => ({
 
 //Pesquisa do campo
 export const search = () => {
-    const request = axios.get(`${URL}?sort=-createdAt`)
+    const request = axios.get(`${URL}?sort=-createAt`)
     return {
         type: "TODO_SEARCHED",
         payload: request
@@ -18,10 +18,16 @@ export const search = () => {
 }
 
 //Adiciona uma tarefa
+
 export const add = (description) => {
-    const request = axios.post(URL, {description}) //ou description: description
-    return {
-        type: "TODO_ADDED",
-        payload: request
+    //Em vez de retornar uma Action, retorna um método que recebe um dispatch como parâmetro
+    //Aqui dispara pros Reducers
+    return dispatch => {
+        axios.post(URL, {description})
+            //Adiciona
+            .then(resp => dispatch({type: "TODO_ADDED", payload: resp.data}))
+            
+            //Quando tiver feito a adição de fato, chama a lista
+            .then(resp => dispatch(search()))
     }
 }
