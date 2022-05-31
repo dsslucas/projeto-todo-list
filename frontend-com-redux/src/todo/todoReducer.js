@@ -16,10 +16,12 @@ const INITIAL_STATE = {
 
 //Função que representa o reducer. Recebe o estado atual e uma action; sempre que uma action for chamada, os reducers são chamados e perguntam se querem alterar o estado ou não
 export default (state = INITIAL_STATE, action) => {
-    switch(action.type){
+    switch (action.type) {
         case 'DESCRIPTION_CHANGED':
             //action,payload vem da ACTION
-            return {...state, description: action.payload} 
+            return { ...state, description: action.payload }
+        case "TODO_SEARCHED":
+            return { ...state, list: action.payload.data}
         default:
             return state
     }
