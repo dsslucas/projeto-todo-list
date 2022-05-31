@@ -16,3 +16,12 @@ export const search = () => {
         payload: request
     }
 }
+
+//Adiciona uma tarefa
+export const add = (description) => {
+    const request = axios.post(URL, {description}) //ou description: description
+    return {
+        type: "TODO_ADDED",
+        payload: request
+    }
+}
