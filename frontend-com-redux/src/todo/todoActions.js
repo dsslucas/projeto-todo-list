@@ -9,11 +9,13 @@ export const changeDescription = (event) => ({
 })
 
 //Pesquisa do campo
-export const search = (description) => {
-    const request = axios.get(`${URL}?sort=-createAt`)
-    return {
-        type: "TODO_SEARCHED",
-        payload: request
+export const search = () => {
+    return (dispatch, getState) => {
+        //Description aqui para evitar que seja chamado em cada uma das Actions
+        const description = getState().todo.description
+        const search = description ? `&description__regex=/${description}/` : ''
+        const request = axios.get(`${URL}?sort=-createdAt${search}`)
+            .then(resp => dispatch({type: 'TODO_SEARCHED', payload: resp.data}))
     }
 }
 
